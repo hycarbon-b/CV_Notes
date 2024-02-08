@@ -21,7 +21,7 @@ $$
     {\alpha}_{1,3}, {\alpha}_{2,3},\dots \\
     \dots ,\dots, \dots
 \end{bmatrix}
-= 
+=
 \begin{bmatrix}
     k^1 \\
     k^2 \\
@@ -29,7 +29,8 @@ $$
     \dots \\ 
 \end{bmatrix}
 [q^1 | q^2 | q^3 | \dots]
-$$
+$$ 
+
 将$\alpha$的矩阵经过softmax后称作矩阵A 
 
 $$
@@ -41,7 +42,8 @@ $$
     {\alpha}_{1,3}, {\alpha}_{2,3},\dots \\
     \dots ,\dots, \dots
 \end{bmatrix}
-$$
+$$ 
+
 将每一个i节点的${\alpha}_{i,:}$作为$v^i$的权重求和得到seq的第一个vec元素输出。在此${\alpha}_{i,:}$可以视作门控（神经元激活）来决定每一个value保留的程度 
 
 

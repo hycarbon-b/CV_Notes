@@ -33,7 +33,7 @@ parameters and the type of its returned value
 - pass arg by reference :  
 arg is paseed by its address instead of value
 - const :  
-use type qualifier `const` before arg in the arg list can prevent modification  
+use type qualifier `const` before arg in the arg list can prevent modification within the function 
 
 ### String (L10)  
 - in C, strings are arrays of `char`, terminated by value 0 or null character(0 as its decimal value)  
@@ -48,6 +48,7 @@ char str[MAX];
 fgets(str, MAX, stdin);
 ``` 
 - `fgets()` can take a file handler, reading stops after an `EOF` or a newline, it retuns `NULL` on error or `EOF`without any character  
+- tips: the filehandle can be passed as a parameter to modify the file in several functions
 ```c
 #define MAX 90 
 // The program reads a file line by line  
@@ -58,6 +59,7 @@ if(fp == NULL){
     return 0;
 }
 int i = 1; char tmp[MAX]; 
+// fscanf(fp, "%s", &);
 while(fgets(tmp,MAX,fp) != NULL){
     printf("%02d %s", i, tmp);
     i++;
@@ -67,7 +69,8 @@ fclose(fp);
 
 ### Pointer (L10)  
 - declaration of type pointer:  
-```c
+```c   
+
 int * p; // p holds a memmory address where stores a int var
 p = &i; //store in p the address of var i   
 ```
@@ -82,8 +85,19 @@ int main(int argc, char *argv[]){
     for(i=0; i<argc;++i)
         printf("argv[%d] = %s\n", i, argv[i]);
     return 0;
+
 }
 ``` 
+### Change the font color  
+Using to CSI(Control sequence intro) to achieve the change.
+```c
+\033[41m (content) \033[0m
+\e[41m (content) \e[0m
+//   \e[0m is to end control sequence
+//   m it to end the paras 
+// 41: red    2J: clear the terminal
+```
+
 
 
 
