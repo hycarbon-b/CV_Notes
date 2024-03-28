@@ -1,3 +1,5 @@
+#! https://zhuanlan.zhihu.com/p/689476334
+# For test only(vscode zhihu)
 ## intro_cs course 复习  
 - ctrl+c terminate the process  
 - ctrl+z pause the pocess:  
