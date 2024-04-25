@@ -1,0 +1,1239 @@
+# encoding: utf-8
+# 2024 R1
+SetScriptVersion(Version="24.1.144")
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system1 = template1.CreateSystem()
+Save(Overwrite=True)
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+meshComponent1 = system1.GetComponent(Name="Mesh")
+meshComponent1.Refresh()
+mesh1 = system1.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+mesh1.Exit()
+meshComponent1.Update(AllDependencies=True)
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+setup1 = system1.GetContainer(ComponentName="Setup")
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(Precision="Double", EnvPath={}, RunParallel=True))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='/file/set-tui-version "24.1"(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(%py-exec "preferences.General.StartupMessages.KeyBehavioralChangesMessage.set_state(True)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"Create/Edit Materials*Table1*Frame1*Frame2*ButtonBox2*PushButton1(Fluent Database)\")(cx-gui-do cx-set-list-selections \"Fluent Database Materials*Table1*Frame1*List1(Materials)\" '( 2))(cx-gui-do cx-activate-item \"Fluent Database Materials*Table1*Frame1*List1(Materials)\")(cx-gui-do cx-activate-item \"Fluent Database Materials*PanelButtons*PushButton1(Close)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*Table1*Frame1*Frame2*ButtonBox2*PushButton2(GRANTA MDS Database)")(cx-gui-do cx-activate-item "GRANTA MDS Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*Table1*Frame1*Frame2*ButtonBox2*PushButton1(Fluent Database)")(cx-gui-do cx-activate-item "Fluent Database Materials*PanelButtons*PushButton6(Copy)")(cx-gui-do cx-activate-item "Fluent Database Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 1)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 3)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 4)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 5)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 7)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 8)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=6)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=6)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=6)"))(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 2)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 3)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 4)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 5)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 6)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 7)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 8)(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-item "Pressure Outlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 1)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 2)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 3)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 4)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 5)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 6)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 7)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 8)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-enable-apply-button \"Velocity Inlet\")(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table9*ExpressionEntry1(Velocity Magnitude)\" '(\"0.0001\" . 0))(cx-gui-do cx-activate-item \"Velocity Inlet*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(1.90537 -1.58561 -1.12047) '(0 0 0) '(0.206056 0.185819 0.158982) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Monitors"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Monitors|Residual"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Monitors|Residual"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Solution|Monitors|Residual\"))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry11\" '( 1e-06))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry17\" '( 1e-06))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry23\" '( 1e-06))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry29\" '( 1e-06))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry35\" '( 1e-06))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry41\" '( 1e-06))(cx-gui-do cx-activate-item \"Residual Monitors*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Run Calculation*Initialize & Calculate")')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"Information*OK\")(cx-use-window-id 51)(cx-set-camera-relative '(0.316518 -0.586972 -0.563125) '(0 0 0) '(0.118201 0.037478 0.0193395) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Results|Graphics\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Results|Graphics|Contours\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Results|Graphics|Contours\"))(cx-gui-do cx-list-tree-right-click \"NavigationPane*Frame2*Table1*List_Tree2\" )(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Results|Graphics|Contours\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Table1*DropDownList1(Contours of)\" '( 2))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*Table1*Frame3*Table1*DropDownList1(Contours of)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 2))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 1 2))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 0 1 2))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-0.256474 -1.07745 -2.59931) '(0 0 0) '(0.176232 0.0549463 0.151084) 0 0)(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton2(Cancel)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*PushButton1(Adapt)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*PushButton1(Surface)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Surface)*PushButton1(Create)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuCreate*Plane...")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Plane Surface*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Plane Surface*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 0 1 2 4))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 1 2 4))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 2 4))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-set-list-selections \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\" '( 2))(cx-gui-do cx-activate-item \"Contours*Table1*Frame3*Frame2*List2(Surfaces)\")(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(0.785306 -0.550329 1.99175) '(0 0 0) '(0.193952 -0.0186857 0.00393407) 0 0)(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-use-window-id 51)(cx-gui-do cx-activate-item "Plane Surface*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(0.193587 2.00848 1.23721) '(0 0 0) '(-0.3139 0.0248288 0.114701) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)\"))(cx-use-window-id 51)(cx-set-camera-relative '(-0.608833 -0.0778835 2.61591) '(0 0 0) '(-0.0059922 0.000574529 0.0619651) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.442675 0.0255744 -1.31349) '(0 0 0) '(0.00618427 0.000755668 0.000673048) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Materials|Fluid|acetone\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))(cx-gui-do cx-enable-apply-button \"Velocity Inlet\")(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table9*ExpressionEntry1(Velocity Magnitude)\" '(\"1e-5\" . 0))(cx-gui-do cx-activate-item \"Velocity Inlet*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Run Calculation*Initialize & Calculate")(cx-gui-do cx-activate-item "Question*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-contour-1*Display")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-1.06526 2.47298 0.072082) '(0 0 0) '(-0.470149 -0.186064 0.0314348) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.164698 -0.982907 0.804465) '(0 0 0) '(0.496568 0.108428 -0.434383) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)\" '( 1))(cx-gui-do cx-enable-apply-button \"Fluid\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)\" '( 0))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))(cx-gui-do cx-enable-apply-button \"Velocity Inlet\")(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table9*ExpressionEntry1(Velocity Magnitude)\" '(\"0.0001\" . 0))(cx-gui-do cx-activate-item \"Velocity Inlet*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Run Calculation*Initialize & Calculate")(cx-gui-do cx-activate-item "Question*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-contour-1*Display")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-integer-entry "Run Calculation*Table1*Table3(Parameters)*Table1*Table1*IntegerEntry1(Number of Iterations)" 1000)(cx-gui-do cx-activate-item "Run Calculation*Table1*Table3(Parameters)*Table1*Table1*IntegerEntry1(Number of Iterations)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Table1*Table6(Solution Advancement)*Table1*PushButton1(Calculate)")')
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0
+    Scale = 0.909091
+    Pan = 0, 0
+    Rotation Quaternion = 0.279848, -0.364705, -0.115917, 0.880476
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case FFF/BOUNDARY:inlet, view=/VIEW:View 4""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case FFF/BOUNDARY:outlet, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.52304
+    Pan = 0, 0
+    Rotation Quaternion = 0.503214, -0.862749, -0.0491492, 0.00475611
+    
+  END
+
+END
+
+> update
+> autolegend plot=/DATA READER/CASE:Case FFF/BOUNDARY:outlet, view=VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.52304
+    Pan = 0, 0
+    Rotation Quaternion = 0.446608, -0.833824, -0.156375, 0.284297
+    
+  END
+
+END
+
+> update
+> autolegend plot=/LINE:Line 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.52304
+    Pan = 0, 0
+    Rotation Quaternion = 0.244138, -0.782862, -0.234514, 0.522042
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 1 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /LINE:Line 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.1905
+    Pan = 0, 0
+    Rotation Quaternion = 0.244138, -0.782862, -0.234514, 0.522042
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Cut
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 0.93002
+    Pan = 0, 0
+    Rotation Quaternion = 0.0833619, -0.765868, -0.200528, 0.605214
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.07664
+    Pan = 0, 0
+    Rotation Quaternion = 0.0833619, -0.765868, -0.200528, 0.605214
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 100
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.10356
+    Pan = 0, 0
+    Rotation Quaternion = -0.00855267, -0.692498, -0.0286835, 0.720801
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 100
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 1.02477
+    Pan = 0, 0
+    Rotation Quaternion = -0.00855267, -0.692498, -0.0286835, 0.720801
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 100
+Line Type = Cut
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 0.951597
+    Pan = 0, 0
+    Rotation Quaternion = 0.00311069, -0.938202, -0.0263634, 0.345073
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 100
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 0.905744
+    Pan = 0, 0
+    Rotation Quaternion = 0.00311069, -0.938202, -0.0263634, 0.345073
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 100
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Option = Two Points
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 0 [m], 0.2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CHART:Chart 1
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = Y
+Default Chart Y Variable = Velocity
+Default Difference Line Calculation = From Points
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /LINE:Line 1
+  Monitor Data Filename =  
+  Monitor Data Source = Case
+  Monitor Data X Variable Absolute Value = Off
+  Monitor Data Y Variable Absolute Value = Off
+  Operating Point Data Case = Case FFF
+  Operating Point Data Filename =  
+  Operating Point Data Source = File
+  Series Name = Series 1
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Auto Chart Symbol Colour = On
+    Chart FFT Line Type = Bars
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Type = Lines
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = Automatic
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 1
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""EXPORT:
+ Export File = A:/onedrive_gt/OneDrive - Guangdong Technion-Israel Institute of Technology/Course/notes/fluid_dynamic/mid-term/1_files/user_files/2.csv
+ Export Chart Name = Chart 1
+ Overwrite = On
+END
+>export chart""")
+results1.SendCommand(Command="""CHART:Chart 1
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = Y
+Default Chart Y Variable = Velocity
+Default Difference Line Calculation = From Points
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /LINE:Line 1
+  Monitor Data Filename =  
+  Monitor Data Source = Case
+  Monitor Data X Variable Absolute Value = Off
+  Monitor Data Y Variable Absolute Value = Off
+  Operating Point Data Case = Case FFF
+  Operating Point Data Filename =  
+  Operating Point Data Source = File
+  Series Name = Series 1
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Auto Chart Symbol Colour = On
+    Chart FFT Line Type = Bars
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Type = Lines
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = Automatic
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 1
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+mesh1.Edit()
+results1.Exit()
+mesh1.Exit()
+mesh1.Edit()
+meshComponent1.Update(AllDependencies=True)
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(0 0 0) '(0 0 0) '(0 0 0) 0 0)(cx-gui-do cx-activate-item \"Information*OK\")(cx-use-window-id 51)(cx-set-camera-relative '(2.33607 -2.5983 -3.13771) '(0 0 0) '(0.149284 0.0367359 0.0910654) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.00632954 1.13653 -0.532662) '(0 0 0) '(-0.138698 -0.00115389 0.0023059) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.0764947 0.0732725 0.636951) '(0 0 0) '(-0.0221302 0.0424281 0.246549) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.446591 0.615643 -0.406956) '(0 0 0) '(-0.128501 -0.0233101 -0.0195045) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Results|Graphics|Vectors\"))(wb-check-upstream-change)(cx-gui-do cx-activate-item \"Question*OK\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Table1*Table6(Solution Advancement)*Table1*PushButton1(Calculate)")(cx-gui-do cx-activate-item "Question*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Mesh"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Vectors"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|contour-1"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-contour-1*Display")')
+results1.Edit()
+results1.SendCommand(Command="""EXPORT:
+ Export File = A:/onedrive_gt/OneDrive - Guangdong Technion-Israel Institute of Technology/Course/notes/fluid_dynamic/mid-term/1_files/user_files/3.csv
+ Export Chart Name = Chart 1
+ Overwrite = On
+END
+>export chart""")
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(0.226768 -0.27402 0.119348) '(0 0 0) '(0.0581788 0.0721653 0.055557) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.79711 -2.66812 -2.0761) '(0 0 0) '(0.469009 0.156011 0.0915712) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-5.1408 4.35695 -6.35666) '(0 0 0) '(-0.810238 -0.317862 0.427975) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.74696 0.360953 -0.0304832) '(0 0 0) '(-0.0302505 -0.056469 0.0794664) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.8158 1.65832 3.1538) '(0 0 0) '(0.0249606 0.018657 0.0518078) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.62189 -0.779386 0.0643119) '(0 0 0) '(0.240576 0.2542 -0.137539) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 1)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 3)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 4)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 5)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 7)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 8)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Viscous (SST k-omega)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Viscous (SST k-omega)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Viscous (SST k-omega)"))(cx-gui-do cx-set-toggle-button2 "Viscous Model*Table1*ToggleBox1(Model)*Laminar" #t)(cx-gui-do cx-activate-item "Viscous Model*Table1*ToggleBox1(Model)*Laminar")(cx-gui-do cx-activate-item "Viscous Model*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-use-window-id 51)(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Run Calculation*Initialize & Calculate")')
+resultsComponent1 = system1.GetComponent(Name="Results")
+resultsComponent1.Refresh()
+results1.SendCommand(Command="""CHART:Chart 1
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = Y
+Default Chart Y Variable = Velocity
+Default Difference Line Calculation = From Points
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /LINE:Line 1
+  Monitor Data Filename =  
+  Monitor Data Source = Case
+  Monitor Data X Variable Absolute Value = Off
+  Monitor Data Y Variable Absolute Value = Off
+  Operating Point Data Case = Case FFF
+  Operating Point Data Filename =  
+  Operating Point Data Source = File
+  Series Name = Series 1
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Auto Chart Symbol Colour = On
+    Chart FFT Line Type = Bars
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Type = Lines
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = Automatic
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 1
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+resultsComponent1.Refresh()
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0, 0, 0.6
+    Scale = 0.884179
+    Pan = 0, 0
+    Rotation Quaternion = 0.00311069, -0.938202, -0.0263634, 0.345073
+    
+  END
+
+END
+
+> update
+>report save, format=preview""")
+results1.SendCommand(Command=">report save, format=preview")
+results1.SendCommand(Command="""CHART:Chart 1
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = Y
+Default Chart Y Variable = Velocity
+Default Difference Line Calculation = From Points
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /LINE:Line 1
+  Monitor Data Filename =  
+  Monitor Data Source = Case
+  Monitor Data X Variable Absolute Value = Off
+  Monitor Data Y Variable Absolute Value = Off
+  Operating Point Data Case = Case FFF
+  Operating Point Data Filename =  
+  Operating Point Data Source = File
+  Series Name = Series 1
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Auto Chart Symbol Colour = On
+    Chart FFT Line Type = Bars
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Type = Lines
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = Automatic
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 1
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+setup1.SendCommand(Command="""(cx-gui-do cx-activate-item \"Information*OK\")(cx-use-window-id 51)(cx-set-camera-relative '(0.257586 -0.391322 0.0689298) '(0 0 0) '(0.10822 0.0639751 -0.0404254) 0 0)(cx-use-window-id 51)(cx-set-camera '(2.9958 1.42328 -0.432689) '(0.000505234 -0.0764793 0.619623) '(-0.439544 0.897784 0.0284124) 0.993114 0.993114 \"perspective\")
+(cx-use-window-id 51)(cx-set-camera-relative '(0.0765507 -0.173471 -0.0121861) '(0 0 0) '(0.0467014 0.0217549 -0.0163649) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.0409915 -3.48041 0.667933) '(0 0 0) '(0.808671 -0.028951 -0.19635) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.0105228 0.0227158 -0.00468272) '(0 0 0) '(-0.005321 0.00264591 0.000878185) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.987305 4.88126 -0.24427) '(0 0 0) '(-1.14407 -0.218246 0.262783) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.8914 -1.69071 0.0353667) '(0 0 0) '(0.600447 0.313508 -0.151347) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.0241497 -0.476017 0.0489963) '(0 0 0) '(0.170961 0.00539362 -0.0318342) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-2.94811 3.38619 0.22306) '(0 0 0) '(-1.01733 -0.90449 0.284493) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.412182 -0.0675228 -0.089605) '(0 0 0) '(0.0177816 0.12986 -0.0161179) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.14961 -0.812568 -0.0266341) '(0 0 0) '(0.446422 0.637083 -0.130018) 0 0)(cx-use-window-id 51)(handle-key \"??\")(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(cx-set-camera-relative '(-1.90642 0.279027 -2.58927) '(0 0 0) '(-0.196247 -0.162873 0.0788556) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-1.3495 -0.584723 -0.914374) '(0 0 0) '(-0.030961 -0.0506287 0.0750124) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-1.04359 -1.48671 -0.27085) '(0 0 0) '(-0.082975 -0.0931816 -0.0598875) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.209563 -0.0723236 -0.0292442) '(0 0 0) '(-0.0131122 -0.00732291 -0.0766139) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.36748 0.913246 0.752536) '(0 0 0) '(0.24331 0.251173 -0.17857) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.174914 0.655692 4.80939) '(0 0 0) '(0.087478 0.0239394 -0.145322) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(1.03296 -3.60243 -0.296391) '(0 0 0) '(0.607924 0.170928 0.157328) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.111202 -0.790482 -1.58016) '(0 0 0) '(0.0920445 -0.115695 -0.334293) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.151046 0.57178 0.0620848) '(0 0 0) '(-0.152688 0.038183 0.0380625) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.036134 0.163183 0.0927339) '(0 0 0) '(-0.0352975 0.00365663 0.00629386) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.4006 1.02643 -0.959224) '(0 0 0) '(-0.218912 0.0606894 0.458924) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.816223 0.325502 -0.85385) '(0 0 0) '(-0.124478 -0.0442663 0.081251) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-1.99833 -0.581237 -0.761375) '(0 0 0) '(-0.00340709 -0.00293404 0.0110953) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-1.36032 -0.733465 1.45627) '(0 0 0) '(-0.000302941 0.00446796 -0.032687) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.069931 -1.55308 -0.0341418) '(0 0 0) '(-0.218733 -0.112302 -0.00459476) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.654985 -1.13399 -0.131008) '(0 0 0) '(-0.275895 -0.279611 -0.0292813) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0 0 0) '(0 0 0) '(0 0 0) 0 0)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-set-camera-relative '(3.03942 0.205597 0.554088) '(0 0 0) '(-0.00594438 -0.000285387 0.0231519) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(cx-set-camera-relative '(1.67791 -0.0906122 1.5097) '(0 0 0) '(0.0150913 0.000227034 -0.0172935) 0 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(plane-3) (cx-active-window))(cx-use-window-id 51)(cx-set-camera-relative '(0 0 0) '(0 0 0) '(0 0 0) 0 0)(cx-use-window-id 51)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Materials|Solid|aluminum\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)\"))(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)\"))""")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions|Fluid|solid (fluid, id=2)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Internal"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Internal"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 1)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 2)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 3)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 4)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 5)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 6)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 7)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 8)(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=5)\"))(cx-gui-do cx-list-tree-right-click \"NavigationPane*Frame2*Table1*List_Tree2\" )(cx-gui-do cx-enable-apply-button \"Velocity Inlet\")(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table9*ExpressionEntry1(Velocity Magnitude)\" '(\"0.000105\" . 0))(cx-gui-do cx-activate-item \"Velocity Inlet*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|LICs"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"MenuBar*PopupMenuTree-Run Calculation*Initialize & Calculate\")(cx-use-window-id 51)(cx-set-camera-relative '(-1.80423 0.772618 -2.32374) '(0 0 0) '(-0.0644382 -0.00412256 0.0668641) 0 0)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-set-camera-relative '(0.541869 0.76969 2.53672) '(0 0 0) '(-0.227762 -0.113611 -0.44902) 0 0)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(plane-3) (cx-active-window))(cx-use-window-id 51)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(plane-3) (cx-active-window))(cx-use-window-id 51)(cx-use-window-id 51)(cx-set-camera-relative '(0.28669 -1.44519 -5.12419) '(0 0 0) '(0.0514427 0.0903075 0.400648) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(0.0708833 -0.299628 0.0583364) '(0 0 0) '(0.1406 0.0233023 -0.0149167) 0 0)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '() (cx-active-window))")
+resultsComponent1.Refresh()
+results1.SendCommand(Command="""CHART:Chart 1
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = Y
+Default Chart Y Variable = Velocity
+Default Difference Line Calculation = From Points
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /LINE:Line 1
+  Monitor Data Filename =  
+  Monitor Data Source = Case
+  Monitor Data X Variable Absolute Value = Off
+  Monitor Data Y Variable Absolute Value = Off
+  Operating Point Data Case = Case FFF
+  Operating Point Data Filename =  
+  Operating Point Data Source = File
+  Series Name = Series 1
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Auto Chart Symbol Colour = On
+    Chart FFT Line Type = Bars
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Type = Lines
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = Automatic
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 1
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.Exit()
+Save(Overwrite=True)
