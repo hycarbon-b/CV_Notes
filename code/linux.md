@@ -1,9 +1,17 @@
 # Linux
 
 ## file
+- pwd ln 
 ```
 pwd 打印当前路径
 ln -s [target] [linkname] 创建softlink
+```
+- 解压
+```
+tar -xvf xxx.tar
+x: extract
+v: verbose (show progress)
+f: use file (followed by the file name)
 ```
 
 ## config
