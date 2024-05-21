@@ -1,4 +1,4 @@
-# State file created:  2024/04/25 03:06:25
+# State file created:  2024/05/12 19:47:15
 # CFX-24.1
 
 CALCULATOR:
@@ -98,7 +98,7 @@ CHART:Chart 1
     Chart X Variable = Chart Count
     Chart Y Variable = Density
     Histogram Y Axis Weighting = None
-    Location = /LINE:Line 1
+    Location = Line 1
     Monitor Data Source = Case
     Monitor Data X Variable Absolute Value = Off
     Monitor Data Y Variable Absolute Value = Off
@@ -155,11 +155,11 @@ DATA READER:
   Construct Variables From Fourier Coefficients = True
   Current Case List = Case FFF
   Current Case Name = A:\onedrive_gt\OneDrive - Guangdong Technion-Israel \
-Institute of Technology\Course\notes\fluid_dynamic\mid-term\1_files\dp0\FFF\\
-Fluent\FFF.1-4-00052.dat.h5
+Institute of Technology\notes\course\fluid_dynamic\mid-term\1_files\dp0\FFF\\
+Fluent\FFF-10-00064.dat.h5
   Current Results File = A:\onedrive_gt\OneDrive - Guangdong Technion-Israel \
-Institute of Technology\Course\notes\fluid_dynamic\mid-term\1_files\dp0\FFF\\
-Fluent\FFF.1-4-00052.dat.h5
+Institute of Technology\notes\course\fluid_dynamic\mid-term\1_files\dp0\FFF\\
+Fluent\FFF-10-00064.dat.h5
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -187,11 +187,11 @@ Fluent\FFF.1-4-00052.dat.h5
   CASE:Case FFF
     Construct Variables From Fourier Coefficients = True
     Current Case Name = A:\onedrive_gt\OneDrive - Guangdong Technion-Israel \
-Institute of Technology\Course\notes\fluid_dynamic\mid-term\1_files\dp0\FFF\\
-Fluent\FFF.1-4-00052.dat.h5
+Institute of Technology\notes\course\fluid_dynamic\mid-term\1_files\dp0\FFF\\
+Fluent\FFF-10-00064.dat.h5
     Current Results File = A:\onedrive_gt\OneDrive - Guangdong Technion-Israel \
-Institute of Technology\Course\notes\fluid_dynamic\mid-term\1_files\dp0\FFF\\
-Fluent\FFF.1-4-00052.dat.h5
+Institute of Technology\notes\course\fluid_dynamic\mid-term\1_files\dp0\FFF\\
+Fluent\FFF-10-00064.dat.h5
     Current Timestep = -1
     Current Timevalue = 0
     File Angle Units = rad
@@ -479,7 +479,7 @@ EXPORT:
   Export Connectivity = false
   Export Coord Frame = Global
   Export File = A:/onedrive_gt/OneDrive - Guangdong Technion-Israel Institute \
-of Technology/Course/notes/fluid_dynamic/mid-term/1_files/user_files/3.csv
+of Technology/notes/course/fluid_dynamic/mid-term/temp.csv
   Export Geometry = true
   Export Node Numbers = false
   Export Null Data = True
@@ -507,11 +507,11 @@ END
 LIBRARY:
   CEL:
     EXPRESSIONS:
-      Accumulated Time Step = 52
+      Accumulated Time Step = 64
       Current Phase Position = 0
-      Current Time Step = 52
+      Current Time Step = 64
       Phase = Current Phase Position
-      Sequence Step = 52
+      Sequence Step = 64
       Time = 0 [s]
       atstep = Accumulated Time Step
       ctstep = Current Time Step
